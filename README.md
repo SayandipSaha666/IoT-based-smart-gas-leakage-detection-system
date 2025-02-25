@@ -1,85 +1,87 @@
-# IoT-Based Gas Monitoring System
+# IoT-Based Smart Gas Leakage Detection System
 
 ## Overview
-The **IoT-Based Gas Monitoring System** is designed to detect harmful gases in the environment using an **MQ135 gas sensor** and microcontrollers such as **Arduino** and **ESP8266**. The system integrates with the **Blynk IoT app** for real-time monitoring, providing notifications and triggering an alarm when gas levels exceed a predefined threshold.
+The **IoT-Based Smart Gas Leakage Detection System** is designed to monitor gas levels in real time using an **MQ135 gas sensor** integrated with an **Arduino ESP8266** microcontroller. The system sends alerts via the **Blynk IoT app** and triggers an alarm if the gas concentration surpasses a predefined threshold.
 
 ## Features
-- **Real-time Gas Monitoring:** Continuously measures air quality using the MQ135 sensor.
-- **ESP8266 Wi-Fi Connectivity:** Enables cloud-based monitoring via the Blynk IoT platform.
-- **Mobile Notifications:** Sends alerts to users when gas levels exceed safe limits.
-- **Alarm System:** Activates a buzzer alarm for immediate local warning.
-- **Data Logging:** Keeps track of gas levels over time for analysis.
+- **Real-Time Gas Monitoring:** Uses MQ135 sensor to detect harmful gas levels.
+- **IoT Integration:** Connects to the Blynk IoT platform for remote monitoring.
+- **Alarm System:** Activates an audible alarm when gas levels exceed the threshold.
+- **Notification Alerts:** Sends real-time alerts via the Blynk app.
+- **Low-Cost & Efficient:** Built with affordable and widely available components.
 
 ## Technologies Used
-- **MQ135 Gas Sensor** (for detecting gases such as CO2, NH3, Benzene, etc.)
-- **Arduino Uno/ESP8266** (for microcontroller processing)
-- **Blynk IoT App** (for remote monitoring)
-- **Wi-Fi Module (ESP8266)** (for cloud connectivity)
-- **Buzzer & LED Indicators** (for alarm notifications)
+- **Arduino ESP8266** (Microcontroller)
+- **MQ135 Gas Sensor** (Air Quality Monitoring)
+- **Blynk IoT App** (Real-Time Data & Notifications)
+- **C++ / Arduino IDE** (Programming)
+- **Wi-Fi Connectivity** (For Remote Monitoring)
 
 ## Installation & Setup
 ### Prerequisites
 Ensure you have the following components:
-- **MQ135 Gas Sensor**
-- **Arduino Uno & ESP8266 Wi-Fi Module**
-- **Buzzer & LED Indicators**
-- **Blynk App Installed on Your Smartphone**
-- **Jumper Wires & Power Supply**
+- Arduino ESP8266
+- MQ135 Gas Sensor
+- Buzzer for alarm
+- Wi-Fi Connectivity
+- Blynk IoT Account
 
 ### Step 1: Clone the Repository
 ```bash
-git clone https://github.com/your-repo/iot-gas-monitoring.git
-cd iot-gas-monitoring
+git clone https://github.com/SayandipSaha666/IoT-based-smart-gas-leakage-detection-system.git
+cd IoT-based-smart-gas-leakage-detection-system
 ```
 
 ### Step 2: Install Required Libraries
-Install the required Arduino libraries using the Arduino IDE:
-1. **ESP8266WiFi**
-2. **BlynkSimpleEsp8266**
-3. **MQ135 Library**
+Install the necessary libraries in Arduino IDE:
+```bash
+pip install esptool
+pip install pyserial
+```
+Also, install the following libraries in Arduino IDE:
+- **ESP8266WiFi**
+- **BlynkSimpleEsp8266**
+- **MQ135**
 
 ### Step 3: Configure Blynk
-1. Create a new project in the Blynk App.
-2. Select **ESP8266** as the device.
-3. Copy the **Auth Token** and update it in the Arduino sketch.
-4. Connect your device to Wi-Fi.
+1. Download the **Blynk IoT App** from the [Play Store](https://play.google.com) or [App Store](https://www.apple.com/app-store/).
+2. Create a new project and obtain the **Auth Token**.
+3. Update the `main.ino` file with your **Auth Token**, Wi-Fi credentials, and sensor pin configurations.
 
-### Step 4: Upload Code
-Upload the provided **Arduino Sketch** to your **ESP8266** using the Arduino IDE.
-
-```bash
-python upload_script.py  # If using PlatformIO
-```
-
-### Step 5: Power and Monitor
-Power up the system and monitor gas levels via the **Blynk App** in real-time.
+### Step 4: Upload the Code
+1. Open `main.ino` in **Arduino IDE**.
+2. Connect the ESP8266 to your computer.
+3. Select **Board: ESP8266** and correct **COM Port**.
+4. Click **Upload** to flash the firmware.
 
 ## Working Mechanism
-1. **Gas Detection:** The MQ135 sensor measures gas concentrations in the air.
-2. **Threshold Monitoring:** If gas levels exceed a predefined safe limit, the system triggers an alarm.
-3. **Blynk Integration:** The gas concentration data is transmitted to the Blynk cloud for visualization.
-4. **Notifications & Alerts:** The user receives an instant mobile notification in case of hazardous gas levels.
+1. **Gas Detection:** The MQ135 sensor continuously measures gas concentration.
+2. **Data Transmission:** The ESP8266 sends real-time sensor data to the Blynk IoT app.
+3. **Alert System:** If gas levels exceed the threshold, the system:
+   - Sends a notification to the user's mobile device via Blynk.
+   - Activates an audible buzzer alarm.
+4. **User Monitoring:** Users can monitor gas levels remotely through the Blynk app.
 
 ## Project Structure
 ```
-iot-gas-monitoring/
-│── src/                     # Source code directory
-│── firmware/                # Arduino sketches
-│── documentation/           # Project documentation
-│── README.md                # Project Documentation
+IoT-based-smart-gas-leakage-detection-system/
+│── src/                 # Source code files
+│── schematics/          # Circuit diagrams
+│── README.md            # Project Documentation
+│── main.ino             # Arduino sketch
 ```
 
 ## Future Enhancements
-- Integration with **SMS Alerts** for emergency notifications.
-- Use of **AI/ML models** for predictive gas leak detection.
-- **Battery Backup** for uninterrupted monitoring.
+- Integrate an LCD display for local gas level monitoring.
+- Implement an SMS alert system for critical gas levels.
+- Extend support for multiple gas sensors.
 
 ## Contributors
-- **Sayandip Saha** (sahasbhs2022@gmail.com)
+- **Sayandip Saha** ([GitHub Profile](https://github.com/SayandipSaha666))
 
 ## License
-This project is licensed under the **MIT License**. Feel free to modify and use it for safety applications.
+This project is licensed under the **MIT License**. Feel free to contribute and enhance its functionality.
 
 ---
-For any issues or suggestions, please open an issue in the [GitHub Repository](https://github.com/SayandipSaha666/IoT-based-smart-gas-leakage-detection-system).
+For any issues or suggestions, please raise an issue in the [GitHub Repository](https://github.com/SayandipSaha666/IoT-based-smart-gas-leakage-detection-system).
 
